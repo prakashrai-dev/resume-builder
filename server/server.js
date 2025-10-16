@@ -11,12 +11,14 @@ const PORT = process.env.PORT || 3000;
 
 // database connection
 await connectDB()
+console.log('Server is using FRONTEND_URL:', process.env.FRONTEND_URL);
 
-app.use(express.json({ limit: '10mb' }));
+
 // app.use(express.json());
 app.use(cors({
     origin: process.env.FRONTEND_URL
 }));
+app.use(express.json({ limit: '10mb' }));
 
 app.get('/',(req,res)=>res.send("Server is live..."))
 app.use('/api/users',userRouter)
