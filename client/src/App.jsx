@@ -52,7 +52,7 @@ const App = () => {
             <Route index element={<Dashboard />} />
             <Route path='builder/:resumeId' element={<ResumeBuilder />} />
           </Route>
-          {/* The ATS Scanner route has been removed */}
+          
         </Route>
       </Routes>
     </>
